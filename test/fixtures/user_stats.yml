@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  games_won: 1
+  games_lost: 1
+  current_state: MyString
+  current_score: 1
+
+two:
+  games_won: 1
+  games_lost: 1
+  current_state: MyString
+  current_score: 1

@@ -1,0 +1,12 @@
+<%= render 'public/shared/head' %>
+<br>
+<br>
+<br>
+<br>
+<div id="board"></div>
+<div id="logs">
+
+</div>
+<%= javascript_include_tag "game" %>
+<%= javascript_include_tag "main" %>
+<%= javascript_include_tag "cable", 'data-turbolinks-track': 'reload' %>

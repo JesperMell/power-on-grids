@@ -1,0 +1,47 @@
+function Map() {
+  this.canvas = document.createElement("canvas");
+  this.ctx = null;
+}
+
+Map.prototype.render = function() {
+  this.canvas.width = 480;
+  this.canvas.height = 480;
+  this.context = this.canvas.getContext("2d");
+  document.getElementById("board").appendChild(this.canvas);
+  this.context.fillStyle = "black";
+  this.centerX = this.canvas.width / 2;
+  this.centerY = this.canvas.height / 2;
+  this.board = document.getElementById("board");
+  this.ctx = this.canvas.getContext("2d");
+}
+
+Map.prototype.draw = function() {
+  this.drawZones();
+  return "good"
+}
+
+Map.prototype.drawZones = function(zones = this.demo.zones) {
+  for(i = 0; i < zones.length; i++) {
+    zone = zones[i];
+    this.ctx.beginPath();
+    this.ctx.moveTo(...zone.paths[0])
+    for(y=0; y < zone.paths.length; y++) {
+      path = zone.paths[y];
+      ctx.lineTo(...path)
+    }
+    this.ctx.fillStyle = zone.color;
+    this.ctx.fill();
+  }
+}
+
+Map.prototype.status = function() {
+  return "good"
+}
+
+Map.prototype.demo = {
+  zones: [{
+    paths: [[10, 10], [120, 20], [110, 100], [30, 110]],
+    color: "#FFEEE9"
+  }]
+}
+
